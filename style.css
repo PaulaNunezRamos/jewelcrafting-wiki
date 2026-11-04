@@ -1,0 +1,118 @@
+/* --- Variables y Reset --- */
+:root {
+    --bg-color: #1a1a2e;
+    --text-color: #e2e8f0;
+    --card-bg: #16213e;
+    --primary: #9d4edd;
+    --accent: #e0aaff;
+    --hover-bg: #240046;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* --- Cabecera y Navegación --- */
+header {
+    background-color: var(--card-bg);
+    padding: 20px;
+    text-align: center;
+    border-bottom: 2px solid var(--primary);
+}
+
+h1 {
+    color: var(--accent);
+    margin-bottom: 15px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    background-color: var(--bg-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav a:hover, nav a.active {
+    background-color: var(--primary);
+    color: white;
+}
+
+/* --- Contenido Principal --- */
+main {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+h2 {
+    margin-bottom: 25px;
+    text-align: center;
+    color: var(--accent);
+}
+
+/* --- Grid de Tarjetas --- */
+.grid-container {
+    display: grid;
+    /* Esto hace la magia responsive sin usar @media queries! */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #2d3748;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+    border-color: var(--primary);
+}
+
+.card h3 {
+    color: var(--accent);
+    margin-bottom: 15px;
+    border-bottom: 1px solid #2d3748;
+    padding-bottom: 5px;
+}
+
+.card ul {
+    list-style-position: inside;
+    color: #a0aec0;
+}
+
+.card li {
+    margin-bottom: 5px;
+}
+
+/* --- Detalles de la tarjeta Combinaciones --- */
+.combo {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: var(--hover-bg);
+    border-radius: 5px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
